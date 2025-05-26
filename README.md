@@ -61,9 +61,9 @@ make HAS_PYTHIA8=true
 ## Useful tools in this repository:
 
 ### '/LJP/': contains tools needed for generating LJP plots.
-- ** `/utils/`: contains codes for plotting the primary LJP plots, use will be introduced next
-- ** `/process_to_json.c/`: converts a ROOT file into a JSON file that is later used for plotting, selection on particle pid, jet momentum, and other identities can be made here
-- ** `/testing_json.c/`: Printing out more information to see if the selection was working (a code for testing)
+- **`/utils/`: contains codes for plotting the primary LJP plots, use will be introduced next
+- **`/process_to_json.c/`: converts a ROOT file into a JSON file that is later used for plotting, selection on particle pid, jet momentum, and other identities can be made here
+- **`/testing_json.c/`: Printing out more information to see if the selection was working (a code for testing)
 - **`/macro_launch/card_generator.sh`**: Generates Pythia configuration cards from a list of input parameters.
 - **`/macro_launch/multi_execute.py`**: Runs Pythia/Delphes simulations locally, performs clustering and declustering, and plots LJPs for all cards in `/pythia_cards`.
 - **`/macro_launch/execute.py`**: Similar to the above but runs for a single card.
