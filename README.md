@@ -60,7 +60,7 @@ make HAS_PYTHIA8=true
 ```
 ## Useful tools in this repository:
 
-### '/LJP/': contains tools needed for generating LJP plots.
+### `/LJP/`: contains tools needed for generating LJP plots.
 - **`/utils/`: contains codes for plotting the primary LJP plots, use will be introduced next
 - **`/process_to_json.c/`: converts a ROOT file into a JSON file that is later used for plotting, selection on particle pid, jet momentum, and other identities can be made here
 - **`/testing_json.c/`: Printing out more information to see if the selection was working (a code for testing)
