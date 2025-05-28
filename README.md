@@ -1,5 +1,5 @@
 # LJP-for-Herwig-and-Pythia
-This is code for generating Primary LJP plots from existing ROOT files. An installation of Pythia 8 installation is included. 
+This is code for generating Primary LJP plots from existing ROOT files. An installation of Pythia 8 installation is included. It is based on [this](https://github.com/cesarecazzaniga/LJP) and [this](https://github.com/Kla1m/SVJ-explore-parameters).
 ## Installation:
 ### Delphes and Pythia8
 
@@ -64,9 +64,10 @@ make HAS_PYTHIA8=true
 - **`/utils/`: contains codes for plotting the primary LJP plots, use will be introduced next
 - **`/process_to_json.c/`: converts a ROOT file into a JSON file that is later used for plotting, selection on particle pid, jet momentum, and other identities can be made here
 - **`/testing_json.c/`: Printing out more information to see if the selection was working (a code for testing)
+- The following were used to generate a pythia sample from given card, I only used execute.sh, but others can be modified to process multiple cards at once, or one can totally run pythia indenpendently and ignore these.
+- **`/macro_launch/execute.py`**: generate a ROOT file based on a given card
 - **`/macro_launch/card_generator.sh`**: Generates Pythia configuration cards from a list of input parameters.
 - **`/macro_launch/multi_execute.py`**: Runs Pythia/Delphes simulations locally, performs clustering and declustering, and plots LJPs for all cards in `/pythia_cards`.
-- **`/macro_launch/execute.py`**: Similar to the above but runs for a single card.
 - **`/macro_launch/launch.sh`**: Submits a SLURM job script (`.sh` file) for running simulations with Pythia and Delphes (**not tested**).
 - **`/macro_launch/logs/`**: Contains output and error logs for each job run.
 
