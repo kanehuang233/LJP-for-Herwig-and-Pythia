@@ -72,6 +72,14 @@ The following were used to generate a pythia sample from given card, I only used
 - **`/macro_launch/launch.sh`**: Submits a SLURM job script (`.sh` file) for running simulations with Pythia and Delphes (**not tested**).
 - **`/macro_launch/logs/`**: Contains output and error logs for each job run.
 
+## Workflow:
+- clone this repository in your Delphes direcotry, move `process_to_json.C` and `testing_json.c` out to the Delphes directory
+- To generate a ROOT file using Pythia8, use the `/macro_launch/execute.py` and modify the path to input and output files within it. Alternatively, run Pythia8 independently and get the ROOT file, it is totally fine.
+- After you generate a ROOT file, either from Herwig or Pythia, run `root -b -q "process_to_json.C(\"Path_to_ROOT_File", \"Output_directory")"` to generate a json file with information needed for plotting the LJP. Clustering and anti-cluster are performed in this step. One can modify the `process_to_json.C` file to decide whether to include invisible particles, do a selection on jet pt, use a different value for R, etc.
+-   You can first use `root -b -q "testing_json.C(\"Path_to_ROOT_File", \"Output_directory")"` to see if your selection on pdgid or other parameter is working properly, as it also saves data for each particle.
+- To plot a primary LJP, run `python3 SVJ-explore-parameters/LJP/Utils/plot.py --file Directory_of_INPUT_FILE --outfile Directory_of_OUTPUT_FILE `
+- To plot a ratio of LJP's of 2 files, say, File1/file2, run `python3 SVJ-explore-parameters/LJP/Utils/plot_ratio.py --file1 Path_to_JSON_file1 --file2 Path_to_JSON_file2 --outfile OUTPUT_Path`
+- To plot uncertainty of ratio, namely, (file1-file2)/file2, run `python3 SVJ-explore-parameters/LJP/Utils/plot_uncertainty.py --file1 Path_to_JSON_file1 --file2 Path_to_JSON_file2 --outfile OUTPUT_Path`
 
 
 
