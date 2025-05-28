@@ -81,6 +81,7 @@ The following were used to generate a pythia sample from given card, I only used
 - To plot a primary LJP, run `python3 SVJ-explore-parameters/LJP/Utils/plot.py --file Directory_of_INPUT_FILE --outfile Directory_of_OUTPUT_FILE `
 - To plot a ratio of LJP's of 2 files, say, File1/file2, run `python3 SVJ-explore-parameters/LJP/Utils/plot_ratio.py --file1 Path_to_JSON_file1 --file2 Path_to_JSON_file2 --outfile OUTPUT_Path`
 - To plot uncertainty of ratio, namely, (file1-file2)/file2, run `python3 SVJ-explore-parameters/LJP/Utils/plot_uncertainty.py --file1 Path_to_JSON_file1 --file2 Path_to_JSON_file2 --outfile OUTPUT_Path`
+
 Alternatively, make your own code for plotting
 
 
