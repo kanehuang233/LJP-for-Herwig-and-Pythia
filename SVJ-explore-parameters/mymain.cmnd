@@ -1,0 +1,116 @@
+
+! 1) Settings that will be used in a main program.
+Main:numberOfEvents = 100000        
+Main:timesAllowErrors = 10          
+
+!Random seed = 0 gives random seed based on time.
+Random:setSeed = on
+Random:seed = 111
+
+! 2) Settings related to output in init(), next() and stat().
+Init:showChangedSettings = on      ! list changed settings
+Init:showAllSettings = on         ! list all settings
+Init:showChangedParticleData = on  ! list changed particle data
+Init:showAllParticleData = on     ! list all particle data
+Next:numberCount = 1000            ! print message every n events
+Next:numberShowLHA = 1             ! print LHA information n times
+Next:numberShowInfo = 1            ! print event information n times
+Next:numberShowProcess = 1         ! print process record n times
+Next:numberShowEvent = 1           ! print event record n times
+Stat:showPartonLevel = on          ! additional statistics on MPI
+Next:numberCount = 10
+
+
+
+
+
+
+
+! 3) Beam parameter settings. Values below agree with default ones.
+Beams:idA = 11                
+Beams:idB = -11                   
+Beams:eCM = 1000
+PartonLevel:MPI   = off                 
+
+! 4) Turn on the production process.
+HiddenValley:ffbar2Zv = on
+4900023:m0 = 1000    !!! Zprime mediator mass
+4900023:mMin = 999   
+4900023:mMax = 1001  
+4900023:mWidth = 2.0   
+4900023:doForceWidth = on
+
+
+! 5) For MC efficiency let Zprime decay only to dark quarks.
+4900023:onMode = off
+4900023:onIfAny = 4900101
+
+
+! 6) Decouple default bifundamental quarks.
+4900001:m0 = 5000
+4900002:m0 = 5000
+4900003:m0 = 5000
+4900004:m0 = 5000
+4900005:m0 = 5000
+4900006:m0 = 5000
+4900011:m0 = 5000
+4900012:m0 = 5000
+4900013:m0 = 5000
+4900014:m0 = 5000
+4900015:m0 = 5000
+
+
+! HV Settings
+
+
+HiddenValley:Ngauge  = 3  
+HiddenValley:nFlav  = 4   
+HiddenValley:alphaOrder = 1
+HiddenValley:pTminFSR = 30
+HiddenValley:spinFv = 0
+HiddenValley:FSR = on
+HiddenValley:fragment = on
+HiddenValley:probVector = 0.58
+
+HiddenValley:aLund = 0.3
+HiddenValley:bmqv2 = 0.8
+
+4900101:m0 = 0.955        
+4900101:mWidth = 0.1  
+    
+    
+4900111:m0 = 17    !!!  dark pion mass 
+4900113:m0 = 31.78    !!! dark rho mass
+
+4900211:m0 = 17    !!! dark pion mass
+4900213:m0 = 31.78     !!! dark rho mass
+
+HiddenValley:setLambda=on
+HiddenValley:Lambda = 10
+
+4900113:addchannel = 1 0.2 91 -1 1            
+4900113:addchannel = 1 0.2 91 -2 2              
+4900113:addchannel = 1 0.2 91 -3 3              
+4900113:addchannel = 1 0.2 91 -4 4              
+4900113:addchannel = 1 0.2 91 -5 5           
+
+
+4900213:onechannel = 1 0.2 0 -1 1 4900211        
+4900213:addchannel = 1 0.2 0 -2 2 4900211
+4900213:addchannel = 1 0.2 0 -3 3 4900211
+4900213:addchannel = 1 0.2 0 -4 4 4900211
+4900213:addchannel = 1 0.2 0 -5 5 4900211
+
+
+
+
+4900111:mayDecay = off
+4900211:mayDecay = off
+
+
+! 6) Other settings. Can be expanded as desired.
+! Note: may overwrite some of the values above, so watch out.
+Tune:ee = 7
+Tune:pp = 21                        ! use Monash Tune
+ParticleDecays:limitTau0 = on      ! set long-lived particle stable ...
+ParticleDecays:tau0Max = 10        ! ... if c*tau0 > 10 mm
