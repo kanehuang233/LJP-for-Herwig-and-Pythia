@@ -199,18 +199,20 @@ export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
 
 ## ROOT File Generation
 
-** For Python, simply use `/macro_launch/execute.py`, a sample command card can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/blob/main/SVJ-explore-parameters/mymain.cmnd), one can alter the parameters in the study if interested.
-** For Herwig, a set of sample configs can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/tree/main/default).
-- *** In your directory of the configs, run `Herwig read LHC-HiddenValley.in`, this generate a `.run` file which can be used to run the Herwig simulation
-- *** After generating the `.run` file, edit the lines:
+### For Python:
+  simply use `/macro_launch/execute.py`, a sample command card can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/blob/main/SVJ-explore-parameters/mymain.cmnd), one can alter the parameters in the study if interested.
+### For Herwig:
+  a set of sample configs can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/tree/main/default).
+-  In your directory of the configs, run `Herwig read LHC-HiddenValley.in`, this generate a `.run` file which can be used to run the Herwig simulation
+-  After generating the `.run` file, edit the lines:
   ```text
   PrintEvent
   <number of events you want>
   ```
   and run `Herwig run LHC-HiddenValley.run -N <number of events>`
-- *** This generates a `.hepmc` file, convert it to a root file. I used the HepMC plugin in Delphes but there should be better ways of doing it:
-```bash
-/afs/cern.ch/work/k/kan/work/Delphes2/DelphesHepMC2 /afs/cern.ch/work/k/kan/work/Delphes2/cards/delphes_card_CMS.tcl /afs/cern.ch/work/k/kan/ILC-HiddenValley.root /afs/cern.ch/work/k/kan/work/ILC/default/ILC-HiddenValley.hepmc
+-  This generates a `.hepmc` file, convert it to a root file. I used the HepMC plugin in Delphes but there should be better ways of doing it:
+```text
+<path to your Delphes>/DelphesHepMC2 <path to your Delphes>/Delphes2/cards/delphes_card_CMS.tcl <directory of your output root file>/<name.root> <path to your input helpmc>/ILC-HiddenValley.hepmc
 ```
 
 
