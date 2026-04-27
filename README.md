@@ -203,7 +203,7 @@ export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
 ** For Herwig, a set of sample configs can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/tree/main/default).
 - *** In your directory of the configs, run `Herwig read LHC-HiddenValley.in`, this generate a `.run` file which can be used to run the Herwig simulation
 - *** After generating the `.run` file, edit the lines:
-  ```bash
+  ```text
   PrintEvent
   <number of events you want>
   ```
