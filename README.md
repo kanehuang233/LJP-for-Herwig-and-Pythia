@@ -199,7 +199,7 @@ export LD_LIBRARY_PATH=$PREFIX/lib:$LD_LIBRARY_PATH
 
 ## ROOT File Generation
 
-### For Python:
+### For Pythia:
   simply use `/macro_launch/execute.py`, a sample command card can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/blob/main/SVJ-explore-parameters/mymain.cmnd), one can alter the parameters in the study if interested.
 ### For Herwig:
   a set of sample configs can be found [here](https://github.com/kanehuang233/LJP-for-Herwig-and-Pythia/tree/main/default).
